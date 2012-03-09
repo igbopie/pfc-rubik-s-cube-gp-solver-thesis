@@ -1,0 +1,49 @@
+\chapter{Conclusiones}\label{ch:concl}
+
+En el presente trabajo hemos abordado el problema de la generación automática,
+mediante programación genética, de programas capaces de resolver cubos de Rubik.
+Con este fin hemos definido un lenguaje apropiado para representar la solución
+del problemay formulado una función de fitness adecuada para que nuestro sistema
+evolutivo consiga desarrollarse y generar buenas soluciones. También hemos
+propuesto un algoritmo de evaluación que obtenga datos suficientes para
+determinar el rendimiento de programa que se está evolucionando.
+
+Sobre la base de estas propuestas hemos realizado un estudio de los parámetros
+del algoritmo evolutivo a la vez que se realizaron varias optimizaciones del
+código usado.
+
+En estos experimentos se logró tener soluciones capaces de resolver algunos cubos
+de alto grado de desorden, en particular cubos que necesitaban hasta 10
+movimientos para ser resueltos. Debido a las restricciones en cuanto a recursos
+computacionales y tiempo dedicados a este trabajo fue imposible continuar
+llevando a cabo estos experimentos. Hay que hacer notar que en un principio se
+contaba con poder usar la plataforma de computación distribuida creada por
+Parabon pero que esto no fue posible y solo se tuvo a disposición recursos
+locales de cómputo.
+
+A partir de las experiencias obtenidas en el estudio mencionado se evolucionó un
+programa que fue enviado a la \textit{Parabon Sponsored GECCO Competition}.
+
+A pesar de los inconvenientes prácticos que han impedido el completo despliegue
+de la propuesta planteada se han obtenido varios resultados de interés. En
+particular, se ha logrado una mejor comprensión de las características del
+problema y se han identificado posibles líneas de solución.
+
+Este trabajo puede ser mejorado de varios puntos de vista. Resulta de interés
+comprobar las consecuencias de introducir elementos de optimización
+multiobjectivo para así lograr una mejor representación del fitness.
+
+Otro aspecto interesante sería introducir el concepto de subpoblaciones en el
+proyecto. De esta forma, existirían varias poblaciones coexistiendo y
+evolucionando paralelamente. En determinados momentos, estas subpoblaciones pueden
+intercambiarse un número determinado de individuos. De esta forma, se aportaría
+una nueva fuente de diversidad en las poblaciones.
+
+También resulta importante encontrar un contexto adecuado para la ejecución de
+los experimentos, ya sea en la plataforma de Parabon u otro ordenador o grupo de
+ordenadores de alto desempeño.
+
+Aunque no se haya conseguido crear un resolvedor universal de cubos de Rubik,
+hemos asentado una base y unas lineas futuras de investigación con las que
+esperamos que algún día el problema sea resuelto venciendo a los resolvedores
+actuales creados mediante métodos de busqueda de todo el espacio de soluciones.

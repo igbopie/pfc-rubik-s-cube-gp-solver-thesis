@@ -1,0 +1,78 @@
+%\bibliography{bib/biblio}
+\chapter{Introducción}\label{ch:intro}
+
+En este proyecto de fin de carrera se tiene como objetivo tratar el tema de la
+programación genética. De esta forma se pretende generar un programa que resuelva
+el cubo de Rubik de forma óptima. El motivo del proyecto se debe a una
+competición ofrecida por Parabon, en la que se pretende participar. El ganador
+de la competición tendrá la oportunidad de exponer su proyecto en \textit{The
+Genetic and Evolutionary Computation Conference 2009} (GECCO 2009),
+una famosa conferencia sobre la computación evolutiva.
+
+La programación genética es una rama de la computación evolutiva donde se imita
+el modelo de evolución natural aplicado a programas informáticos. La computación
+evolutiva procede de difqerentes orígenes: programación evolutiva
+\cite{Fogel:1966}, algoritmos genéticos \cite{Holland:1975}, estrategias de
+evolución \cite{Rechenberg:1971,Schwefel:1975} y por último programación genética
+\cite{Cramer:1985,Koza:1992}. Todas estas vertientes nacieron de forma
+independiente, pero en los noventa se unificaron para formar la computación
+evolutiva.  Todas estas ramas coinciden en inspirarse en la teoría de la
+evolución moderna de la que Darwin \cite{Darwin:1859} plantó sus pilares, para
+resolver problemas, normalmente de optimización, en la informática.
+
+La computación evolutiva se caracteriza por encontrar soluciones inusuales a
+problemas de los que no existe un método resolutivo claro o viable en términos
+temporales. La potencia de estos sistemas reside en una multitudinaria
+exploración aleatoria del espacio búsqueda.
+
+Uno de los problemas del cubo de Rubik es que debido al gran número de
+posibilidades de desorden no es posible determinar a priori un número mínimo de
+pasos que se necesitan para resolver cualquier cubo. De este modo, los métodos
+que han dado mejores resultados han sido los sistemas de búsquedas exhaustivas
+informáticas,  batiendo el record con 26 pasos \cite{Cooperman-Kunkle:2007} y
+22 pasos \cite{Rokicki:2008}. Sin embargo, explorar todo el extenso espacio de
+cubos de Rubik posibles resulta un proceso muy costoso, por lo que es posible que
+aún existan soluciones más cortas inexploradas actualmente. Esto hace que la
+programación genética sea un desafío interesante para la resolución mediante la
+computación evolutiva.
+
+El resto de este documento trendrá la siguiente estructura. Un capítulo
+introductorio donde se describirá de la teoría de la evolución en la que se
+inspiran las principales ideas de los sistemas evolutivos
+(capítulo \ref{ch:estado-arte}). Procederemos a adentrarnos en la  situación actual de los sistemas evolutivos, en concreto en la programación evolutiva, donde se verán todos los procesos existentes en una evolución informática. Además profundizaremos y
+describiremos los métodos más utilizados en la programación evolutiva, con sus
+ventajas y sus defectos.
+
+Una vez introducidos en la materia de la programación genética fijaremos los
+objetivos de este proyecto de fin de carrera (capítulo \ref{ch:objetivos}).
+
+\begin{itemize}
+  \item Desarrollo de una representación adecuada del problema para hacer posible su solución usando
+  programación genética.
+  \item Experimentación y ajuste de los parámetros del algoritmo evolutivo a fin de lograr soluciones con el
+  mejor desempeño posible.
+  \item Ejecución del sistema y extracción de la mejor solución para ser
+  enviada a la competición.
+\end{itemize}
+
+En el capítulo \ref{ch:diseno-algoritmo} explicaremos el diseño de nuestro algoritmo que hemos
+utilizado para la realización de este proyecto. Veremos las evoluciones que ha
+sufrido nuestro lenguaje hasta llegar hasta el seleccionado para ser
+implementado. Además hablaremos de todo el complejo proceso de evaluación y
+asignación del fitness a nuestros individuos.
+
+Una vez abordado el diseño del sistema, nos centraremos en la implementación
+(capítulo \ref{ch:implementacion}). Explicaremos las herramientas que nos han
+ayudado a desarrollar un programa evolutivo, además de las librerías que modelan
+el cubo de Rubik computacionalmente. Terminaremos este capítulo explicando la
+implementación con diagramas de clases y la configuración final de la
+plataforma evolutiva.
+
+En el capítulo \ref{ch:pruebasyresultados} hablaremos de las pruebas realizadas, explicando el
+porqué de ellas y las conclusiones de su resultado.
+
+Las conclusiones finales del proyecto se verán en el capitulo \ref{ch:concl}, además de
+hablar de las futuras líneas de investigación.
+
+Como anexos añadiremos la planificación del proyecto y un desarrollo en detalle
+de los parámetros de utilización de ECJ.

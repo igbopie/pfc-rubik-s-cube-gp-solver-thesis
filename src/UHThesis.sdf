@@ -1,0 +1,210 @@
+\typeout{Class PhdThesis: UHThesis.sdf 2007/04/17.}
+
+%%% Defines page shape
+\ifcase\@ptsize% mods for 10 pt
+%\ClassWarningNoLine{PhdThesis}
+%{You should use 12pt option instead of 10pt}
+\setlength\textheight{53\baselineskip}
+\or% mods for 11 pt
+%\ClassWarningNoLine{PhdThesis}{You should use 12pt option instead of 11pt}
+\textheight 46\baselineskip
+\or% mods for 12 pt
+\setlength\textheight{42\baselineskip}
+\fi
+\advance\textheight by \topskip
+\setlength\headsep{10mm}
+\setlength\topmargin{3mm}
+\setlength\evensidemargin{3mm}
+\setlength\oddsidemargin{7mm}
+\setlength\textwidth{150mm}
+%
+% custom for UC3M:
+\newcommand*{\thesiscustomname}[1]{\gdef\@thesiscustomnameo{#1}}
+%
+\global\let\@thesiscustomnameo\@empty
+%
+%%% Provides strings required by maketitlepage (and patched maketitle)
+\def\@phd@address{%
+Facultad de Matem\'aticas y Computaci\'on\\
+Universidad de La Habana\\
+San L\'azaro y L, Plaza 10400 Ciudad de La Habana, Cuba.
+}
+\gdef\@phd@university{%
+\includegraphics[width=.15\paperwidth]{logos/escudo-uh}\\%
+Universidad de La Habana\\
+Facultad de Matem\'aticas y Computaci\'on
+}
+%%% Redefines maketitle
+\RequirePackage{graphicx}
+\renewcommand*{\maketitle}{
+	\begin{titlepage}%
+	\newsavebox{\titlebox}
+	\begin{lrbox}{\titlebox}
+	\begin{minipage}[b][.8\paperheight][s]{.75\paperwidth}
+	\let\footnotesize\small
+	\let\footnoterule\relax
+	\null%\vfil%
+	\begin{center}%
+	\textsc{\@phd@university}\par
+	\vskip 4em plus .25em minus .25em
+	{\Large\textsc{
+	    \ifx\@thesiscustomnameo\@empty
+	       \thesisname
+	    \else
+	       \@thesiscustomnameo
+	    \fi
+	    \ifx\@phd@number\@empty\else: \@phd@number\fi}\par}
+	\vskip 6em
+	{\Huge\bfseries\@title\par}\vskip4em%
+	{\begin{tabular}[t]{c}%
+	{\Huge\@author}
+	\end{tabular}}
+	\par
+	%\vskip2em plus.25em minus.25em
+	\vskip1em\vfill
+	% supervisors
+	\def\and{
+	%\end{tabular}\\[5em]\mbox{}\end{center}\end{minipage}\hfill
+	%\begin{minipage}[t]{0.45\textwidth}\begin{center}
+	%\begin{tabular}[t]{c}\textsc{\large\supervisorname}
+    \\[1ex]\centering%
+    }
+    \ifx\@phd@supervisor\@empty\else
+	    \begin{minipage}[t]{0.55\textwidth}
+		    %\begin{center}
+		     \centering
+			    \textsc{\large\supervisorname}\\[1ex]
+			  \centering
+			  \Large \@phd@supervisor
+		    %\end{center}
+	    \end{minipage}
+	\fi%
+% referees
+\def\and{\end{tabular}\\[5em]\mbox{}\end{center}\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}\begin{center}
+\begin{tabular}[t]{c}\textsc{\refereename}\\[1ex]%
+}
+\ifx\@phd@referee\@empty\else
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{center}
+\begin{tabular}[t]{c}%
+\textsc{\refereename}\\[1ex]
+\@phd@referee
+\end{tabular}\\[5em]\mbox{}
+\end{center}
+\end{minipage}
+\fi%
+\par
+% chair
+\def\and{\end{tabular}\\[5em]\mbox{}\end{center}\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}\begin{center}
+\begin{tabular}[t]{c}\textsc{\chairname}\\[1ex]%
+}
+\ifx\@phd@chair\@empty\else
+\begin{minipage}[t]{0.45\textwidth}
+\begin{center}
+\begin{tabular}[t]{c}%
+\textsc{\chairname}\\[1ex]
+\@phd@chair
+\end{tabular}\\[5em]\mbox{}
+\end{center}
+\end{minipage}
+\fi%
+\vskip1em\vfill
+{\large\ifx\undefined\datename\else\datename~\fi\@date\par}% Set date in \large size.
+\end{center}%\par
+\ifx\@thanks\@empty\else
+\par\vfil%
+\@thanks
+\fi%
+\null
+\end{minipage}
+\end{lrbox}
+
+\newsavebox{\pollobox}
+\begin{lrbox}{\pollobox}
+\begin{minipage}[b][.8\paperheight][s]{.8\paperwidth}
+\null\vfill%\par\noindent
+\hspace{0.55\paperwidth}
+%\includegraphics[width=.25\paperwidth]{logo/uc3m-logo-claro}%
+%\vfill\null
+\end{minipage}
+\end{lrbox}
+
+\enlargethispage*{3cm}
+\vspace*{-\topmargin}\vspace*{-\headheight}\vspace*{-1cm}
+\hspace*{-2cm}%\null\hspace*{-\oddsidemargin} \hspace*{-.35in}
+\hfill\usebox{\pollobox}\hfill\par
+\vspace*{-.8\paperheight}\vspace*{-\baselineskip}%\vspace*{-\topmargin}\vspace*{-\headheight}
+\hspace*{-2cm}%
+\hfill\usebox{\titlebox}\hfill\par
+\end{titlepage}%
+\thispagestyle{empty}
+\setcounter{footnote}{0}%
+\let\thanks\relax\let\maketitle\relax%
+% second page
+% copyright (or copyleft)
+\ifx\@phd@rights\@empty\else
+\vskip 4em
+\par\vfil\noindent
+\@phd@rights\\
+\hrule
+\fi%
+% address
+\vfill
+\def\and{\\}
+\ifx\@phd@homepage\@empty\else
+\noindent
+\homepagename:
+\begin{tabular}[t]{l}
+ \@phd@homepage%
+\end{tabular}\\[2em]
+\fi
+\ifx\@phd@email\@empty\else
+\noindent
+\emailname:
+\begin{tabular}[t]{l}
+ \@phd@email%
+\end{tabular}\\[2em]
+\fi
+\ifx\@phd@phone\@empty\else
+\noindent
+\phonename:
+\begin{tabular}[t]{l}
+ \@phd@phone%
+\end{tabular}\\[2em]
+\vfil
+\fi%
+\ifx\@phd@address\@empty\else
+% \par
+\noindent
+\addressname:\\[1em]
+\@phd@address
+\fi%
+\vfill
+\vfill
+}% end \maketitle
+%%% Adds captions used by maketitle
+\addto\phd@captions@spanish{%
+\def\addressname{Direcci\'on}%
+\def\candidatename{Candidato}%
+\def\emailname{Correo electr\'onico}%
+\def\homepagename{P\'agina web}%
+\def\phonename{Tel\'efono}%
+\def\thesisname{Tesis Doctoral}%
+\def\supervisorname{Dirigida por}%
+\def\bibname{Referencias}%
+}
+\addto\phd@captions@american{%
+\def\addressname{Address}%
+\def\candidatename{Candidate}%
+\def\emailname{E-mail}%
+\def\homepagename{Web page}%
+\def\phonename{Telephone}%
+\def\thesisname{Ph.D. Thesis}%
+\def\supervisorname{Supervised by}%
+\def\bibname{References}%
+}
+\let\phd@captions@english\phd@captions@american
+\endinput

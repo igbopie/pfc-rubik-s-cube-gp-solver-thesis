@@ -1,0 +1,67 @@
+\chapter{Participando en GECCO 2009}\label{ch:gecco2009}
+
+The Genetic and Evolutionary Computation Conference (GECCO) es una de las 11
+conferencias internacionales más importantes de inteligencia
+artificial. En la conferencia se presentan los últimos resultados en el campo
+en crecimiento de la computación evolutiva. Además se suelen hacer
+competiciones donde la gente expone sus soluciones a los problemas dados.
+
+Parabon es una empresa que se dedica a la computación distribuida a través de
+su plataforma Frontier. Con animo de promocionar su plataforma, Parabon
+patrocina una competición del GECCO 2009. Se trata de evolucionar un programa
+que consiga resolver cualquier cubo de Rubik en el menor número de pasos
+posibles.
+
+La competición de Parabon exigía en sus bases que el programa se evolucionase
+en su plataforma Frontier. Además Parabon ofrece otra plataforma para
+desarrollar programación genética llamado Origin. Origin esta basado en ECJ,
+una plataforma de computación evolutiva, adaptando ECJ para funcionar sobre
+Frontier.
+
+Al intentar utilizar Origin descubrimos que la plataforma estaba en vias de
+desarrollo y resultaba casi imposible trabajar con ella. Es por esto que
+migramos nuestro desarrollo a ECJ.
+
+A partir de las experiencias anteriores se diseñó un experimento que tenía como
+objetivo la generación de un programa capaz de tomar parte en la competición.
+
+La simulación se llevó a cabo con los parámetros anteriormente determinados como
+óptimos y con cubos de un máximo de 10 movimientos de desorden y con una cantidad
+total de 2000 cubos diferentes aproximadamente. Este límite se debe a las
+limitaciones del hardware en que tuvo lugar la misma.
+
+La ejecución de la simulación se extendió durante 15 días y los resultados de la
+misma fueron enviados a la competición. A pesar de que la competición fue
+suspendida por falta de participantes válidos, la solución aportada fue
+reconocida por los organizadores como la mejor participación. Los resultados de
+la misma se resumen en la tabla \ref{tab:bestsolver}. Así mismo el programa
+enviado se muestra en el apéndice \ref{sec:mejor-individuo}.
+
+
+\begin{table}[tb]
+\caption{Resultados de funcionamiento del mejor individuo.}
+\label{tab:bestsolver}
+\centering
+\begin{tabular}{lccr}
+\toprule
+ \textbf{Dificultad} & \textbf{Resueltos} & \textbf{Total}&
+  \textbf{Porcentaje}\\
+\midrule
+1 & 12 & 12 & 100.00\% \\
+2&135&144&93.75\%\\
+3&589&860&68.49\%\\
+4&373&1000&37.30\%\\
+5&148&1000&14.80\%\\
+6&37&1000&3.70\%\\
+7&12&1000&1.20\%\\
+8&1&1000&0.10\%\\
+9&2&1000&0.20\%\\
+10&1&1000&0.10\%\\
+\bottomrule
+\textbf{Total}&1310&8016&16.34\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+

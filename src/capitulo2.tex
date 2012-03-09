@@ -1,0 +1,58 @@
+\chapter{Objetivos del PFC}\label{ch:objetivos}
+
+El objetivo del proyecto de fin de carrera consiste en evolucionar un programa a
+través de la programación genética capaz de resolver el cubo de Rubik de forma
+óptima. Como este objetivo es realmente amplio, se dividirá en varios
+subobjetivos:
+
+\section{Encontrar un lenguaje apropiado para representar la solución del
+problema}
+
+El lenguaje que utilice nuestro programa necesitando pocos nodos, será capaz  de
+expresar un solución. Cuanto menos nodos tenga que generar la programación, la
+soluciones serán menos complejas, por lo tanto, la convergencia del algoritmo
+será más alta, llegando a una solución más rápidamente.
+
+\section{Encontrar un fitness adecuado para que nuestro sistema evolutivo
+consiga desarrollarse y generar soluciones del cubo de Rubik.}
+
+La elección del fitness es fundamental para la correcta evolución del sistema.
+Tiene que mantener “sana” la población y a la vez indicar claramente qué
+individuos son mejores que otros.
+
+\section{Encontrar un algoritmo de evaluación que obtenga datos
+suficientes para determinar el rendimiento del programa.}
+
+El algoritmo de evaluación se encargará de probar el programa con una muestra
+representativa del problema, lidiando con factores de eficiencia y rendimiento,
+para conseguir en el menor tiempo posible sacar una muestra fiable de las
+capacidades del programa evaluado.
+
+\section{Encontrar los parámetros adecuados de nuestro framework para optimizar el
+desarrollo del resolvedor.}
+
+Nuestro framework de trabajo contiene infinidad de parámetros a configurar, los
+cuales requieren ser correctamente establecidos, ya que una mala configuración
+puede ser fatal y generar programas inoperativos. La configuración es crucial
+para el éxito de nuestro sistema evolutivo.
+
+\section{Optimizar la velocidad de evaluación.}
+
+Para poder obtener soluciones en un tiempo razonable, el sistema tendrá que
+ahorrar cualquier tiempo de CPU extra. Para ello se necesitará crear multitud de
+cachees y mecanismos que eviten la repetición de procesos que dan lugar al mismo
+resultado ya calculado anteriormente.
+
+\section{Resolver cualquier cubo de Rubik.}
+
+Dentro del objetivo del proyecto, antes de conseguir encontrar una solución
+óptima al problema, necesitaremos encontrar una solución cualquiera del problema.
+Y, a partir de ahí, reducir el número de pasos a realizar para resolver el cubo.
+
+\section{Buscar las soluciones más compactas.}
+
+Una vez que tenemos la solución al problema, los programas tendrán que ir bajando
+la complejidad de sus soluciones hasta llegar a un cierto limite. Obviamente se
+desconoce cual es éste, sin embargo, nuestro límite será el tiempo que
+dispongamos para encontrar una solución menor. Además llegará un punto en el que
+apenas mejore. En ese punto podremos dar por finalizada la ejecución.

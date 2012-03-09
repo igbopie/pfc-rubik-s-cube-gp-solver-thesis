@@ -1,0 +1,148 @@
+% Ejemplo de documento de tesis.
+% Versión:
+% $Id: main.tex 647 2009-06-25 20:08:54Z lm-mac $
+%
+% Una tesis en inglés y de la UC3M sería:
+\documentclass[11pt,spanish,UC3MThesis]{PhdThesis}
+%
+% Una tesis en español y de la UH sería:
+%\documentclass[11pt,spanish,UHThesis]{PhdThesis}
+\usepackage{babel,tabularx,ctable}
+\usepackage{algorithmic}
+\usepackage{pdfpages}
+%----------------------------------------
+% opciones para hyperref
+% enlaces en colores, convenientes para visualizar el documento.
+\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true, pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={blue},citecolor={blue},pagecolor={blue}, urlcolor={blue}, 
+pdftitle={Programacion Genetica Aplicada a la Resolucion del Cubo de Rubik}, 
+pdfsubject={Proyecto de Fín de Carrera},
+pdfauthor={Ignacio Bona Piedrabuena},
+pdfkeywords={}}
+% enlaces en blanco y negro, mejor para la versión final
+%newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,pdfpagemode={UseOutlines},
+%plainpages=true,pdfpagelabels=true,colorlinks=true,linkcolor={black},citecolor={black},pagecolor={black}, urlcolor={black},
+%pdftitle={Understanding New Orleans}, 
+%pdfsubject={Another PhD Thesis},
+%pdfauthor={Ignatius O'Reilly},
+%pdfkeywords={katrina,new orleans,jeans}}
+%
+% incluyendo hyperref
+\usepackage[\MYhyperrefoptions,pdftex]{hyperref} % para pdflatex
+%\usepackage[hypertex, colorlinks=true, backref]{hyperref} % para latex
+%----------------------------------------
+%
+% otros paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{graphicx}
+%
+%  declarando estilo de bibliografía
+\usepackage[round,sort&compress]{natbib}
+% redefiniendo \cite para que apunte a la cita más común de natbib
+\renewcommand{\cite}[1]{\citep{#1}}
+%
+% cambiar tipo de letras
+%\usepackage[charter]{mathdesign}
+%\usepackage[math]{iwona}
+\usepackage{cmbright}
+\usepackage[cmbright]{sfmath}
+
+% para las tablas
+\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
+\setlength{\heavyrulewidth}{0.1em}
+\newcommand{\otoprule}{\midrule[\heavyrulewidth]}
+
+%
+%---------------------------------------
+% 
+\title{Programación Genética Aplicada a la Resolución del Cubo de Rubik}
+\author{Ignacio Bona Piedrabuena}
+\supervisor{Luis Martí Orosa}
+% usando href estas cosas quedan mejor
+%\email{\href{mailto:reilly@uc3m.es}{reilly@uc3m.es}}
+%\homepage{\href{http://www.giaa.inf.uc3m.es/miembros/reilly}{http://www.giaa.inf.uc3m.es/miembros/reilly}}
+%\address{31415 Katrina St, New Orleans 21780 \\ Lousiana, United States}
+%
+%\telephone{+34 91 856 13XX}
+\date{Colmenarejo, 2010} 
+%
+% si el documento no es una tesis doctoral lo puedes cambiar aquí
+\thesiscustomname{Proyecto de Fín de Carrera}
+%
+\makeindex
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\begin{document}
+\renewcommand{\tablename}{Tabla} 
+%\pagestyle{empty}
+\chaptertitlestyle{serifbig}
+\partstyle{serifbig}
+\pagestyle{serif}
+
+\maketitle
+ \begin{dedication}
+ 	\textit{Para mi copiloto.}
+ \end{dedication}
+%\begin{abstract}
+%    In this work we present 
+%\end{abstract}
+\begin{acknowledgments}
+ 	Me gustaría agradecer a todas aquellas personas que me han apoyado no sólo
+ 	en la realización de este proyecto, sino a todos aquellos que me han ayudado
+ 	a llegar hasta aquí. A mi madre. A mi padre. A mi hermano. A toda mi familia
+ 	que me apoya en cada momento. A Azahara y a su familia por hacerme sentir
+ 	como uno más. A Enrique por terminar el proyecto casi a la vez. A todos
+ 	aquellos amigos que nos hemos mantenido con fuerzas examen tras
+ 	examen: Alexis, Dani, Acebes, Lidia, Jorge y muchos más. A Crazy Soul: Abtin,
+ 	Gonzo, Marc, Joseba. A Against The Odds: Roberto, Edu y Jesús por perseguir
+ 	un sueño. A todos aquellos amigos y amigas que nos hacer pasar tan buenos
+ 	momentos: Kim, Isa, Cris, Govi, Erica, Nacho, Alba, Arázazu, Ali. A mis
+ 	compañeros de beca: Dani, Miguel. A mis viejos amigos: Fer, Pablo, Victor, Diego, Jorge. A mis
+compañeros de trabajo: Javier, Marisol, Pepón, Javier Izquierdo, Amaia,
+ 	Carlos, Guillermo. A mi vecino y amigo de toda la vida Santi. A Luis por su paciencia y apoyo, gracias a los
+ 	cuales he logrado que este proyecto llegue a buen puerto. A todos
+ 	aquellos que se me olvide nombrar.
+ 	
+ 	Y, en especial, a aquellos que ya no están aquí. A mi abuelo. A Loli.
+ 	
+ 	A todos ellos gracias.
+\end{acknowledgments}
+\frontmatter 
+\tableofcontents
+%\listoffigures
+%\listoftables
+%\begin{preface}
+%    Here the preface
+%\end{preface}
+%if you use only (sub)section* in introduction
+
+
+
+\mainmatter
+\include{introduction}
+% otherwise use
+% \mainmatter
+% \include{introduction}
+% with \chapter{\introductionname} instead of \introduction
+
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+\include{capitulo4}
+\include{capitulo5}
+\include{capitulo6}
+\include{conclusions}
+\backmatter
+
+
+% para citar todo el .bib eliminar en tu version final
+%\nocite{*}
+\small
+\bibliographystyle{apa-good}
+\bibliography{bib/biblio}
+
+\appendix
+\include{anexos}
+%\printindex
+%\printindex[autx]
+\end{document}
